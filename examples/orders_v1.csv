@@ -1,0 +1,5 @@
+order_id,customer_id,amount,paid,ordered_at
+1001,C001,320.0,true,2026-10-01
+1002,C002,180.5,true,2026-10-02
+1003,C003,450.0,false,2026-10-03
+1004,C004,210.0,true,2026-10-04
