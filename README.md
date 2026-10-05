@@ -1,5 +1,7 @@
 # Byline
 
+[![ci](https://github.com/Miiduoa/byline/actions/workflows/ci.yml/badge.svg)](https://github.com/Miiduoa/byline/actions/workflows/ci.yml)
+
 資料檔改了，報表還能不能照跑？
 
 Byline 是一個小型 CSV contract checker。它把資料集的欄位、型別、缺值率與檔案指紋存成 manifest；之後資料更新時，可以在 pipeline 真正執行前先檢查是否出現 breaking change。
