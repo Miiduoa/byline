@@ -1,0 +1,4 @@
+order_id,amount,paid,ordered_at,coupon_code
+1005,350.0,true,2026-10-05,FALL10
+1006,free,true,2026-10-06,
+1007,199.0,false,2026-10-07,
