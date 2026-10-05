@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byline-contracts"
+version = "0.1.0"
+description = "Small CSV contract checks for local data pipelines and CI."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Miiduoa" }]
+
+[project.scripts]
+byline = "byline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
