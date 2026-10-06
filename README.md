@@ -8,6 +8,29 @@ Byline 是一個小型 CSV contract checker。它把資料集的欄位、型別�
 
 我做這個工具的原因很單純：很多分析錯誤不是模型造成的，而是上游 CSV 悄悄改欄名、型別或資料內容，直到報表壞掉才被發現。
 
+## 先看失敗語意
+
+Byline 不把所有差異都當成錯誤。它刻意區分「會讓下游壞掉」與「值得注意但不該直接擋 CI」。
+
+| 變更 | 結果 |
+|---|---|
+| contract 中的欄位消失 | breaking |
+| 欄位型別改變 | breaking |
+| 新增欄位 | warning |
+| 缺值率明顯上升 | warning |
+| 完全符合 contract | pass |
+
+這個判斷直接反映在 CLI exit code，所以它可以被放進 PR / CI，而不是只能靠人肉看報表。
+
+### Review path
+
+- CLI：`src/byline/`
+- 可重現資料：`examples/`
+- contract comparison tests：`tests/`
+- CI：`.github/workflows/ci.yml`
+
+
+
 ## 目前做得到
 
 - 建立 CSV manifest：row count、欄位、推斷型別、null rate、unique count、SHA-256
